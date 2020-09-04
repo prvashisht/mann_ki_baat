@@ -1,0 +1,15 @@
+{
+  "name": "mann_ki_baat",
+  "version": "1.0.0",
+  "description": "Analysis of PM Modi's Mann ki Baat's text since the Coronavirus pandemic started",
+  "main": "text_cleaner.js",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pratyush Vashisht",
+  "license": "ISC"
+}
