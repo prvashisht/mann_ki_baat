@@ -8,10 +8,6 @@ const clean_2_files = './clean_2/';
 const clean_3_files = './clean_3/';
 const clean_4_files = './clean_4/';
 
-// testing with 1 file first
-// let filename = '20200830.txt';
-// let filecontents = fs.readFileSync(clean_1_files + filename, 'utf8')
-
 const clean_text = text => {
   text = text.toLowerCase();
 
@@ -30,16 +26,17 @@ const clean_text = text => {
   return text;
 }
 
+let bigcommon = {};
 let remove_common_words = text => {
   let commonwords_hash = {};
-  let safelist  = ["toy", "", ".", "our", "eco", "bow", "fun", "big", "hub", "act"];
-  let blocklist = [];
 
-  // splitting the text on each space
+  let blocklist = fs.readFileSync("./blocklist.txt", "utf8").split("\n").filter(word => word.length);
+  let safelist = fs.readFileSync("./safelist.txt", "utf8").split("\n");
+
   text.split(" ").forEach(word => {
-      // all short words except the ones above
-      if (word.length <= 3 && word.length > 0 && safelist.indexOf(word) == -1) {
+      if (blocklist.indexOf(word) != -1 || (word.length <= 3 && word.length > 0 && safelist.indexOf(word) == -1)) {
           commonwords_hash[word] = commonwords_hash[word] ? commonwords_hash[word] + 1 : 1;
+          bigcommon[word] = bigcommon[word] ? bigcommon[word] + 1 : 1;
       }
   });
   let commonwords = Object.keys(commonwords_hash);
@@ -47,21 +44,26 @@ let remove_common_words = text => {
   // we want to return a word if it's not in the array
   text = text.split(" ").filter(word => commonwords.indexOf(word) == -1).join(" ");
 
+  // remove the space before all sentence ends
+  text = text.replace(/ \./g, ".");
+
   return text;
 };
 
 fs.readdirSync(clean_1_files, 'utf8').forEach(filename => {
   let filecontents = fs.readFileSync(clean_1_files + filename, 'utf8')
-  console.log(1, filename, filecontents.length);
+  // console.log(1, filename, filecontents.length);
 
   filecontents = clean_text(filecontents);
   fs.writeFileSync(clean_2_files + filename, filecontents, 'utf8');
-  console.log(2, filename, filecontents.length);
+  // console.log(2, filename, filecontents.length);
 
   filecontents = remove_common_words(filecontents);
+  filecontents = filecontents.replace(/toy\b/g, "toys")
   fs.writeFileSync(clean_3_files + filename, filecontents, 'utf8');
-  console.log(3, filename, filecontents.length);
+  // console.log(3, filename, filecontents.length);
 });
+// console.log(JSON.stringify(Object.keys(bigcommon)));
 
 // let lines = text.split(/\.|\?/).map(line => {
 //     line = line.trim();
