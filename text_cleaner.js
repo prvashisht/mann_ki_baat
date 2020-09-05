@@ -59,6 +59,9 @@ fs.readdirSync(clean_1_files, 'utf8').forEach(filename => {
   // console.log(2, filename, filecontents.length);
 
   filecontents = remove_common_words(filecontents);
+
+  // Will add a system to combine words like this later if more such words are found
+  // This is the example that made me start this project so I'm aware of this
   filecontents = filecontents.replace(/toy\b/g, "toys")
   fs.writeFileSync(clean_3_files + filename, filecontents, 'utf8');
   // console.log(3, filename, filecontents.length);
