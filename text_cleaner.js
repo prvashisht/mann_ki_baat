@@ -21,17 +21,16 @@ const clean_text = text => {
   // remove most common characters, and numbers
   text = text.replace(/‘|’|\/|\d+|"|“|”|,|;|–|…|-|‘|’|'|!|#|%|&|\*|\(|\)|_|\[|\]|\{|\}|:|<|>/g, " ");
 
-  // replace all places with multiple "space" with a single space
-  text = text.replace(/\s+/g, " ");
-
   // add a space before all sentence ends so the last word isn't added in short words
   text = text.replace(/\.|\?/g, " . ");
+
+  // replace all places with multiple "space" with a single space
+  text = text.replace(/\s+/g, " ");
 
   return text;
 }
 
 let remove_common_words = text => {
-
   let commonwords_hash = {};
   let safelist  = ["toy", "", ".", "our", "eco", "bow", "fun", "big", "hub", "act"];
   let blocklist = [];
@@ -58,10 +57,12 @@ fs.readdirSync(clean_1_files, 'utf8').forEach(filename => {
   filecontents = clean_text(filecontents);
   fs.writeFileSync(clean_2_files + filename, filecontents, 'utf8');
   console.log(2, filename, filecontents.length);
+
+  filecontents = remove_common_words(filecontents);
+  fs.writeFileSync(clean_3_files + filename, filecontents, 'utf8');
+  console.log(3, filename, filecontents.length);
 });
 
-// text.toLowerCase().replace(/‘|’|\/|\d+|"|“|”|,|;|–|…|-|‘|’|'|!|#|%|&|\*|\(|\)|_|\[|\]|\{|\}|:|<|>/g, " ").replace(/\s+| the /g, " ");
-// 
 // let lines = text.split(/\.|\?/).map(line => {
 //     line = line.trim();
 //     let line1 = line;
