@@ -41,7 +41,7 @@ Now the first case in India was reported on [30th January 2020](https://www.cnbc
 	6. [30 August 2020](https://www.pmindia.gov.in/en/news_updates/pms-address-in-the-15th-episode-of-mann-ki-baat-2-0/)
 * Text Cleaning idea taken from [Approsto's text cleaner](https://approsto.com/text-cleaner)
 * Word cloud done with [Jason Davies' wordcloud](https://www.jasondavies.com/wordcloud)
-* Coronavirus data from [owid/covid-19-data](https://github.com/owid/covid-19-data)
+* Coronavirus data from [owid/covid-19-data](https://github.com/owid/covid-19-data/tree/master/public/data)
 * Coronavirus data plotted and animated on [Flourish Studio](https://app.flourish.studio/visualisation/3633810/)
 * [Reddit post](https://www.reddit.com/r/dataisbeautiful/comments/fm38c1/oc_covid19_infections_vs_rcoronavirus/fl20jzw/) that motivated/guided me to the tools used.
 
