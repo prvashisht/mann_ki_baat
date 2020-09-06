@@ -44,3 +44,8 @@ Now the first case in India was reported on [30th January 2020](https://www.cnbc
 * Coronavirus data from [owid/covid-19-data](https://github.com/owid/covid-19-data)
 * Coronavirus data plotted and animated on [Flourish Studio](https://app.flourish.studio/visualisation/3633810/)
 
+
+
+### Disclaimer
+
+I've tried to be as unbiased as possible, but because I'm cleaning the data, choosing the words to add or remove manually, there's likely a bias in there. Please feel free to open a pull request to improve this tool in any way. 
