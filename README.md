@@ -1,9 +1,12 @@
 # mann_ki_baat
 
-Analysis of Indian PM Modi's Mann ki Baat's text since the Coronavirus pandemic started.
-PM Modi's main interaction with the nation is almost solely through an hour or so long monologue called Mann ki Baat, translated to Inner Thoughts, or Heart's Talk to be literal. 
+Indian PM Narendra Modi interacts with the public through an hour or so long radio programme called [Mann ki Baat](https://en.wikipedia.org/wiki/Mann_Ki_Baat), translated to Inner Thoughts, or Heart's Talk to be literal. 
 
-Now the first case in India was reported on [30th January 2020](https://www.cnbc.com/2020/01/30/india-confirms-first-case-of-the-coronavirus.html),  and until the next Mann ki Baat episode on [23rd February 2020](https://www.pmindia.gov.in/en/news_updates/pms-address-in-the-9th-episode-of-mann-ki-baat-2-0/), India had only 3 coronavirus cases so there was no real need to focus on this. However from that point onward, the number of cases started growing rapidly in India and by the next episode, India had almost 1000 cases warranting an action from the government.
+The first case in India was reported on [30th January 2020](https://www.cnbc.com/2020/01/30/india-confirms-first-case-of-the-coronavirus.html),  and until the next Mann ki Baat episode on [23rd February 2020](https://www.pmindia.gov.in/en/news_updates/pms-address-in-the-9th-episode-of-mann-ki-baat-2-0/), India had only 3 coronavirus cases so there was no real need to focus on this. However from that point onward, the number of cases started growing rapidly in India and by the next episode, India had almost 1000 cases warranting an action from the government.
+
+This code cleans the data and prepares the word cloud for the programme to see what topics were most talked about as we progressed into the year. The code removes special characters, numbers, extra spaces, and most common and not-so-relevant words from the speech, turns it into lower case, and proceeds to add the text into the text area a few lines at a time to create a sense changing topics being talked about as the programme progresses.
+
+To show different perspectives, there are two word clouds. One combines the text for all programmes since March and creates an animtion of word cloud. Another one builds the same word cloud for individual episodes so we can see what the trend was on the whole as well as over time as the cases increased.
 
 ### File Structure
 
