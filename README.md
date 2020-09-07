@@ -8,6 +8,11 @@ This code cleans the data and prepares the word cloud for the programme to see w
 
 To show different perspectives, there are two word clouds. One combines the text for all programmes since March and creates an animtion of word cloud. Another one builds the same word cloud for individual episodes so we can see what the trend was on the whole as well as over time as the cases increased.
 
+Watch the videos here:
+
+* [Cumulative Word frequency cloud of Mann ki Baat since March 2020](https://youtu.be/FdGO-0LA2s8)
+* [Word frequency cloud of Mann ki Baat since March 2020](https://youtu.be/a2t5L7zqJd8)
+
 ### File Structure
 
 
